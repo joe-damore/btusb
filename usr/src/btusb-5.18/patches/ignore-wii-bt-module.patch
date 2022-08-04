@@ -1,15 +1,24 @@
 diff --git a/btusb.c b/btusb.c
-index 50df417..a3c35e6 100644
+index 50df417..875ef8a 100644
 --- a/btusb.c
 +++ b/btusb.c
-@@ -195,6 +195,10 @@ static const struct usb_device_id blacklist_table[] = {
- 	/* Atheros AR9285 Malbec with sflash firmware */
- 	{ USB_DEVICE(0x03f0, 0x311d), .driver_info = BTUSB_IGNORE },
+@@ -27,7 +27,7 @@
+ #include "btrtl.h"
+ #include "btmtk.h"
+ 
+-#define VERSION "0.8"
++#define VERSION "1.8"
+ 
+ static bool disable_scofix;
+ static bool force_scofix;
+@@ -254,6 +254,10 @@ static const struct usb_device_id blacklist_table[] = {
+ 	{ USB_DEVICE(0x0489, 0xe036), .driver_info = BTUSB_ATH3012 },
+ 	{ USB_DEVICE(0x0489, 0xe03c), .driver_info = BTUSB_ATH3012 },
  
 +	/* Nintendo Wii Bluetooth module */
 +	/* Blacklist to prevent interfering with Dolphin */
 +	{ USB_DEVICE(0x057e, 0x0305), .driver_info = BTUSB_IGNORE },
 +
- 	/* Atheros 3012 with sflash firmware */
- 	{ USB_DEVICE(0x0489, 0xe04d), .driver_info = BTUSB_ATH3012 },
- 	{ USB_DEVICE(0x0489, 0xe04e), .driver_info = BTUSB_ATH3012 },
+ 	/* QCA ROME chipset */
+ 	{ USB_DEVICE(0x0cf3, 0x535b), .driver_info = BTUSB_QCA_ROME |
+ 						     BTUSB_WIDEBAND_SPEECH },
